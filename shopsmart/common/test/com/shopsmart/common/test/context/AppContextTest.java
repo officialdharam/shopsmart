@@ -6,7 +6,7 @@ import junit.framework.Assert;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,8 @@ public class AppContextTest {
 	@Autowired
 	private DataSource dataSource;
 
-	@Before
-	public void init() {
+	@BeforeClass
+	public static void init() {
 		BasicConfigurator.configure();
 	}
 

@@ -1,4 +1,4 @@
-package com.shopsmart.common.test.config;
+package com.shopsmart.common.config;
 
 import java.util.Properties;
 
@@ -11,11 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -24,11 +19,7 @@ import com.shopsmart.common.util.Constants;
 
 @Configuration
 @EnableTransactionManagement
-@EnableAspectJAutoProxy
-@Import(JndiConfig.class)
-@Profile("dev")
-@PropertySource({ "classpath:shopsmart-test.properties" })
-@ComponentScan(basePackages = "com.shopsmart.common", excludeFilters = { @ComponentScan.Filter(Configuration.class) })
+@ComponentScan(basePackages = "com.shopsmart.common", excludeFilters = { @ComponentScan.Filter(Configuration.class)})
 public class HibernateConfig {
 
 	static final Logger logger = Logger.getLogger(HibernateConfig.class);
@@ -38,11 +29,6 @@ public class HibernateConfig {
 
 	@Autowired
 	private DataSource dataSource;
-
-	@Bean(name = "appProperty")
-	public static PropertySourcesPlaceholderConfigurer appProperty() {
-		return new PropertySourcesPlaceholderConfigurer();
-	}
 
 	@Bean(name = "sessionFactory")
 	public SessionFactory getSessionFactory() throws Exception {

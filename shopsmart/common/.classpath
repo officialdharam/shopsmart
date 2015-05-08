@@ -5,8 +5,7 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/APP_LIB"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/TEST_LIB"/>
-	<classpathentry kind="lib" path="/lib/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/APP_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TEST_LIB"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
